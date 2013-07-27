@@ -39,6 +39,10 @@ body {
 	font-size: 0.8em;
 }
 
+.gameBoard .player {
+	width: 70px;
+}
+
 .footer {
 	padding: 10px;
 	border-top: 1px solid #ccc;

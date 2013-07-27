@@ -69,7 +69,7 @@ session_start();
 	<body>
 		<div class="pageContainer">
 			<div class="header">
-				<div class="avatar"><img src="<?php echo $user->profile_image_url ?>" /></div>
+				<div class="avatar"><img src="<?php echo $user->profile_image_url; ?>" /></div>
 				<div class="names">
 					<div class="name"><?php echo $user->name; ?></div>
 					<div class="twitterName">@<?php echo $user->screen_name; ?></div>
