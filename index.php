@@ -77,6 +77,7 @@ session_start();
 			</div>
 			
 			<div class="gameBoard">
+				<div class="player"><img src="images/twitterBird.png" /></div>
 			</div>
 			
 			<div class="footer">
