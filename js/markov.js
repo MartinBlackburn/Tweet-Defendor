@@ -1,6 +1,5 @@
-Markov = function(chosenWord)
+Markov = function()
 {
-
     //List of url for source text
     var mobyDick = "text/mobyDick.txt";
 
@@ -14,6 +13,9 @@ Markov = function(chosenWord)
     //Array of words that can appear on screen
     var wordBuffer = [];
 
+    //chosen word
+    var chosenWord = null;
+    
     //final sentence
     var finalSentence = "";
 
@@ -46,15 +48,8 @@ Markov = function(chosenWord)
         wordArray = finalSourceText.split(/\s+/g);
 
         stripWords();
-
-        if(chosenWord)
-        {
-            genNextWords();
-        }
-        else
-        {
-            randomStartWords();
-        }
+        
+        randomStartWords();
     }
 
     //Strip punctuation from words in word array
@@ -102,6 +97,13 @@ Markov = function(chosenWord)
     {
         console.log("getRandomWord#");
         return wordBuffer[Math.floor(Math.random()*wordBuffer.length)];
+    }
+    
+    Markov.prototype.setWord = function(word)
+    {
+        chosenWord = word;
+        
+        genNextWords();
     }
 };
 
