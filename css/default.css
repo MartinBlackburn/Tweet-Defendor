@@ -1,0 +1,45 @@
+body {
+	padding: 30px;
+}
+
+.pageContainer {
+	width: 100%;
+	min-width: 600px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	margin: 0 auto;
+	
+	overflow: hidden;
+}
+
+.header {
+	padding: 10px;
+	border-bottom: 1px solid #ccc;
+}
+
+.header .avatar {
+	width: 60px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.header .avatar img {
+	border-radius: 5px;
+}
+
+.header .names {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.header .names .twitterName {
+	display: inline-block;
+	vertical-align: middle;
+	
+	font-size: 0.8em;
+}
+
+.footer {
+	padding: 10px;
+	border-top: 1px solid #ccc;
+}
