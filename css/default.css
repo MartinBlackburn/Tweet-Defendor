@@ -39,8 +39,16 @@ body {
 	font-size: 0.8em;
 }
 
+.gameBoard {
+	position: relative;
+}
+
 .gameBoard .player {
 	width: 70px;
+	
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
 .footer {
