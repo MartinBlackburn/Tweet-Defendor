@@ -217,7 +217,7 @@ TweetDefendor = function()
         
         var i = 0;
 
-        while(i < 50)
+        while(i < 100)
         {
             var randomNum = Math.floor(Math.random()*wordArray.length);
 
@@ -227,6 +227,8 @@ TweetDefendor = function()
                 i++;
             }
         }
+
+        wordBuffer = eliminateDuplicates(wordBuffer);
         
         startGame();
     }
@@ -259,11 +261,32 @@ TweetDefendor = function()
                     }
                 }
             }
+
+           wordBuffer = eliminateDuplicates(wordBuffer);
         }
         else
         {
             sendTweet();
         }
+    }
+
+    function eliminateDuplicates(arr)
+    {
+        var len=arr.length,
+        var out=[],
+        var obj={};
+
+      for (i=0;i<len;i++) 
+      {
+        obj[arr[i]]=0;
+      }
+
+      for (i in obj) 
+      {
+        out.push(i);
+      }
+
+      return out;
     }
 
     function getRandomWord()
