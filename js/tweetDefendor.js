@@ -108,8 +108,6 @@ TweetDefendor = function()
         if(wordSpeed > 15) {
         	wordSpeed -= 5;
         }
-        
-        console.log(wordSpeed);
     }
     
     
