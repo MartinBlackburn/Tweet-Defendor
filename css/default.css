@@ -118,6 +118,8 @@ body {
 	position: absolute;
 	top: 0;
 	left: 0;
+	
+	z-index: 1;
 }
 
 
@@ -161,6 +163,8 @@ body {
 .bullet {
 	width: 10px;
 	height: 5px;
+	margin-top: 22px;
+	margin-left: 15px;
 	border-radius: 5px;
 	display: inline-block;
 	
