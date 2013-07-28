@@ -24,3 +24,7 @@ Peter Pan by J. M. Barrie
 The Importance of Being Earnest by Oscar Wilde
 A Tale of Two Cities by Charles Dickens
 Little Brother by Cory Doctorow
+FTW by Cory Doctorow
+Printcrime by Cory Doctorow
+When Sysadmins Ruled the Earth by Cory Doctorow
+I, Robot by Cory Doctorow

@@ -27,9 +27,13 @@ TweetDefendor = function()
     var beingEarn = "text/beingEarn.txt";
     var twoCities = "text/twoCities.txt";
     var littleBro = "text/littleBro.txt";
+    var ftw = "text/ftw.txt";
+    var printCrime = "text/printCrime.txt";
+    var sysAdmin = "text/sysAdmin.txt";
+    var iRobot = "text/iRobot.txt";
 
     //ebooks array
-    var ebookList = [mobyDick, alice, frankenstein, pridePred, huckFinn, wuthHeight, peterPan, beingEarn, twoCities, littleBro];
+    var ebookList = [mobyDick, littleBro, alice, ftw, frankenstein, printCrime, pridePred, sysAdmin, huckFinn, iRobot, wuthHeight, peterPan, beingEarn, twoCities];
     var finalSourceText = "";
 
     //Array of all the words
