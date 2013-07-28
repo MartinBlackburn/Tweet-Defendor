@@ -23,6 +23,11 @@ TweetDefendor = function()
             	//remove word
             	$(this).remove();
             	
+            	addToSentance($(this).text());
+            	
+            	//set chosen word
+            	setWord($(this).text());
+            	
             	//clear screen
             	clearScreen();
             }
@@ -88,6 +93,14 @@ TweetDefendor = function()
     	var newWord = "<div class='word font" + Math.ceil(Math.random()*10) + "' style='top: " + Math.ceil(Math.random()*90) + "%'>" + getRandomWord() + "</div>";
     	gameBoard.append(newWord);
     }
+    
+    //add new word to sentance
+    function addToSentance(word)
+    {
+    	finalSentence += " " + word;
+    	$(".footer").text(finalSentence);
+    }
+    
 
     /*==============================================================
                         Stuff for Morkov chain
