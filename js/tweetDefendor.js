@@ -158,8 +158,6 @@ TweetDefendor = function()
 	});
 	
     var moveButtlets = setInterval(function() {
-    	$(".bullet").css( "left", "+=2" );
-    	
     	$(".bullet").each(function()
         {
     		if($(this).position().left > gameBoard.outerWidth()) {
@@ -167,7 +165,7 @@ TweetDefendor = function()
             	$(this).remove();
             }
         });
-    }, 10);
+    }, 30);
     
     function shoot(yPos)
     {

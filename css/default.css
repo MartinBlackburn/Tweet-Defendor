@@ -168,7 +168,7 @@ body {
 	border-radius: 5px;
 	display: inline-block;
 	
-	background: #999;
+	background: #000;
 	
 	white-space: nowrap;
 	
@@ -177,4 +177,31 @@ body {
 	position: absolute;
 	top: 0;
 	left: 20px;
+	
+	-webkit-animation: bulletsMove 6s linear 0s 1 normal;
+	-moz-animation: bulletsMove 6s linear 0s 1 normal;
+	-ms-animation: bulletsMove 6s linear 0s 1 normal;
+	-o-animation: bulletsMove 6s linear 0s 1 normal;
+	animation: bulletsMove 6s linear 0s 1 normal;
+}
+
+@-webkit-keyframes bulletsMove {
+  0%   { left: 20px; }
+  100% { left: 2000px; }
+}
+@-moz-keyframes bulletsMove {
+  0%   { left: 20px; }
+  100% { left: 2000px; }
+}
+@-ms-keyframes bulletsMove {
+  0%   { left: 20px; }
+  100% { left: 2000px; }
+}
+@-o-keyframes bulletsMove {
+  0%   { left: 20px; }
+  100% { left: 2000px; }
+}
+@keyframes bulletsMove {
+  0%   { left: 20px; }
+  100% { left: 2000px; }
 }
