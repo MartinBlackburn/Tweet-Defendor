@@ -152,7 +152,10 @@ TweetDefendor = function()
     	
     	$(".bullet").each(function()
         {
-            
+    		if($(this).position().left > gameBoard.outerWidth()) {
+            	//remove bullet
+            	$(this).remove();
+            }
         });
     }, 10);
     

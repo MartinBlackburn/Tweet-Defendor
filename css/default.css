@@ -113,6 +113,8 @@ body {
 .gameBoard .player {
 	width: 70px;
 	
+	pointer-event: none;
+	
 	position: absolute;
 	top: 0;
 	left: 0;
