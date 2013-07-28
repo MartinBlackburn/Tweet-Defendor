@@ -57,6 +57,9 @@ session_start();
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>Tweet Defendor</title>
 		
+		<!-- Fonts -->
+		<link href='http://fonts.googleapis.com/css?family=Droid+Sans|Libre+Baskerville|Droid+Serif|Vollkorn|Bree+Serif|Vidaloka|Open+Sans|Roboto|Raleway|Inconsolata' rel='stylesheet' type='text/css'>
+		
 		<!-- jQuery -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		
