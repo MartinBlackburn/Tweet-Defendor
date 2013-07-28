@@ -65,13 +65,6 @@ TweetDefendor = function()
 		}
 	});
 	
-	//shoot when clicked
-	gameBoard.on("click", function(event) {
-		if(event.offsetY < gameboardHeight - player.height()) {
-		    shoot(event.offsetY);
-		}
-	});
-	
 	//START!
     function startGame()
     {
@@ -130,7 +123,7 @@ TweetDefendor = function()
     //clear screen of words
     function clearScreen()
     {
-    	$(".word").remove();
+    	$(".word, .bullet").remove();
     }
     
     //add new word to the screen.
@@ -147,10 +140,28 @@ TweetDefendor = function()
     	$(".footer").text(finalSentence);
     }
     
-    //shoot
+    //shoot when clicked
+	gameBoard.on("click", function(event) {
+		if(event.offsetY < gameboardHeight - player.height()) {
+		    shoot(event.offsetY);
+		}
+	});
+	
+    var moveButtlets = setInterval(function() {
+    	$(".bullet").css( "left", "+=2" );
+    	
+    	$(".bullet").each(function()
+        {
+            
+        });
+    }, 10);
+    
     function shoot(yPos)
     {
     	console.log("shooting");
+    	
+    	var newBullet = "<div class='bullet' style='top: " + yPos + "'</div>";
+    	gameBoard.append(newBullet);
     }
     
 
