@@ -1,7 +1,7 @@
 TweetDefendor = function() 
 {
     //variables
-	var gameBoard = $(".gameBoard").first();
+    var gameBoard = $(".gameBoard").first();
     var finalSentence = "";
     var gameboardHeight = 0;
     var player = $(".player");
@@ -11,7 +11,7 @@ TweetDefendor = function()
     //word timers
     var timer;
     var moveWordsTimer;
-	moveWords();
+    moveWords();
 
     //List of url for source text
     var mobyDick = "text/mobyDick.txt";
@@ -52,26 +52,26 @@ TweetDefendor = function()
     resizeGameBoard();
     
     //listener for screen resize
-	$(window).resize(function() {
-		resizeGameBoard();
-	});
-	
-	//make the player follow the mouse (start when mouse is over it)
-	gameBoard.on("mousemove", function(event) {
-		if(event.offsetY < gameboardHeight - player.height()) {
-		    player.css({
-		       top: event.offsetY
-		    });
-		}
-	});
-	
-	//START!
+    $(window).resize(function() {
+        resizeGameBoard();
+    });
+    
+    //make the player follow the mouse (start when mouse is over it)
+    gameBoard.on("mousemove", function(event) {
+        if(event.offsetY < gameboardHeight - player.height()) {
+            player.css({
+               top: event.offsetY
+            });
+        }
+    });
+    
+    //START!
     function startGame()
     {
-    	console.log("Starting");
-    	
-    	timer = setInterval(function() {
-        	displayNewWord()
+        console.log("Starting");
+        
+        timer = setInterval(function() {
+            displayNewWord()
         }, wordInterval);
     }
     
@@ -81,24 +81,24 @@ TweetDefendor = function()
         clearInterval(moveWordsTimer);
         
         moveWordsTimer = setInterval(function() {
-        	//remove if too far off the screen, then clear screen and add to sentance
-        	$(".word").each(function()
+            //remove if too far off the screen, then clear screen and add to sentance
+            $(".word").each(function()
             {
                 if($(this).position().left < -150) {
-                	//remove word
-                	$(this).remove();
-                	
-                	//add word to sentance
-                	addToSentance($(this).text());
-                	
-                	//set chosen word
-                	setWord($(this).text());
-                	
-                	//clear screen
-                	clearScreen();
-                	
-                	//increase level speed
-                	moveWords();
+                    //remove word
+                    $(this).remove();
+                    
+                    //add word to sentance
+                    addToSentance($(this).text());
+                    
+                    //set chosen word
+                    setWord($(this).text());
+                    
+                    //clear screen
+                    clearScreen();
+                    
+                    //increase level speed
+                    moveWords();
                 }
             });
         }, wordSpeed);
@@ -108,64 +108,84 @@ TweetDefendor = function()
     //resize gameboard
     function resizeGameBoard()
     {
-    	gameboardHeight = $(window).height() - $(".header").outerHeight() - $(".footer").outerHeight() - 100;
-    	gameBoard.css("height", gameboardHeight + "px");
+        gameboardHeight = $(window).height() - $(".header").outerHeight() - $(".footer").outerHeight() - 100;
+        gameBoard.css("height", gameboardHeight + "px");
     }
     
     
     //clear screen of words
     function clearScreen()
     {
-    	$(".word, .bullet").remove();
+        $(".word, .bullet").remove();
     }
     
     //add new word to the screen.
     function displayNewWord()
     {
-    	var newWord = "<div class='word font" + Math.ceil(Math.random()*10) + "' style='top: " + Math.ceil(Math.random()*90) + "%'>" + getRandomWord() + "</div>";
-    	gameBoard.append(newWord);
+        var newWord = "<div class='word font" + Math.ceil(Math.random()*10) + "' style='top: " + Math.ceil(Math.random()*90) + "%'>" + getRandomWord() + "</div>";
+        gameBoard.append(newWord);
     }
     
     //add new word to sentance
     function addToSentance(word)
     {
-    	finalSentence += " " + word;
-    	$(".footer").text(finalSentence);
+        finalSentence += " " + word;
+        $(".footer").text(finalSentence);
     }
     
     //shoot when clicked
     var canShoot = true;
     
     var canShootTimer = setInterval(function() {
-    	canShoot = true;
+        canShoot = true;
     }, 800);
     
-	gameBoard.on("click", function(event) {
-		if(event.offsetY < gameboardHeight - player.height()) {
-		    if(canShoot && $(".bullet").length < 15) {
-		    	shoot(event.offsetY);
-		    }
-		    
-		    canShoot = false;
-		}
-	});
-	
+    gameBoard.on("click", function(event) {
+        if(event.offsetY < gameboardHeight - player.height()) {
+            if(canShoot && $(".bullet").length < 15) {
+                shoot(event.offsetY);
+            }
+            
+            canShoot = false;
+        }
+    });
+    
     var moveButtlets = setInterval(function() {
-    	$(".bullet").each(function()
+        $(".bullet").each(function()
         {
-    		if($(this).position().left > gameBoard.outerWidth()) {
-            	//remove bullet
-            	$(this).remove();
+            var bullet = $(this);
+            $(".word").each(function()
+            {
+                if(isColliding(bullet, $(this)))
+                {
+                    bullet.remove();
+                    $(this).remove();
+                }
+            });
+     
+
+            if($(this).position().left > gameBoard.outerWidth()) {
+                //remove bullet
+                $(this).remove();
             }
         });
     }, 30);
     
     function shoot(yPos)
     {
-    	console.log("shooting");
+        console.log("shooting");
 
-    	var newBullet = "<div class='bullet' style='top: " + (yPos + Math.random() * 5) + "'</div>";
-    	gameBoard.append(newBullet);
+        var newBullet = "<div class='bullet' style='top: " + (yPos + Math.random() * 5) + "'</div>";
+        gameBoard.append(newBullet);
+    }
+
+    function isColliding(a, b) {
+        return !(
+        ((a.offset().top + a.height()) < (b.offset().top)) ||
+        (a.offset().top > (b.offset().top + b.height())) ||
+        ((a.offset().left + a.width()) < b.offset().left) ||
+        (a.offset().left > (b.offset().left + b.width()))
+        );
     }
     
 
@@ -220,7 +240,7 @@ TweetDefendor = function()
     {
         for(var i = 0; i < wordArray.length; i++)
         {
-            wordArray[i] = wordArray[i].replace(/\b[-.,;:()_&$#!?\[\]{}"']+\B|\B[-.,;:()_&$#!?\[\]{}"']+\b/g, "").toLocaleLowerCase();
+            wordArray[i] = wordArray[i].replace(/\b[-.,;:()_&$#*!?\[\]{}"']+\B|\B[-.,;:()_&$#*!?\[\]{}"']+\b/g, "").toLocaleLowerCase();
         }
     }
 
@@ -281,14 +301,14 @@ TweetDefendor = function()
            wordBuffer = eliminateDuplicates(wordBuffer);
            
            if(wordBuffer.length <= 1) {
-        	   //add word to sentance
-        	   addToSentance(wordBuffer[0]);
-           	
-	           //set chosen word
-	           setWord(wordBuffer[0]);
-	           	
-	           //clear screen
-	           clearScreen();
+               //add word to sentance
+               addToSentance(wordBuffer[0]);
+            
+               //set chosen word
+               setWord(wordBuffer[0]);
+                
+               //clear screen
+               clearScreen();
            }
         }
         else
@@ -299,22 +319,22 @@ TweetDefendor = function()
 
     function eliminateDuplicates(arr)
     {
-		var len = arr.length;
-		var out = [];
-		var obj = {};
-		var i;
-	
-		for (i=0; i<len; i++) 
-		{
-			obj[arr[i]]=0;
-		}
-		
-		for (i in obj) 
-		{
-			out.push(i);
-		}
-		
-		return out;
+        var len = arr.length;
+        var out = [];
+        var obj = {};
+        var i;
+    
+        for (i=0; i<len; i++) 
+        {
+            obj[arr[i]]=0;
+        }
+        
+        for (i in obj) 
+        {
+            out.push(i);
+        }
+        
+        return out;
     }
 
     function getRandomWord()
