@@ -97,6 +97,7 @@ TweetDefendor = function()
                 	//remove word
                 	$(this).remove();
                 	
+                	//add word to sentance
                 	addToSentance($(this).text());
                 	
                 	//set chosen word
@@ -263,6 +264,17 @@ TweetDefendor = function()
             }
 
            wordBuffer = eliminateDuplicates(wordBuffer);
+           
+           if(wordBuffer.length <= 1) {
+        	   //add word to sentance
+        	   addToSentance(wordBuffer[0]);
+           	
+	           //set chosen word
+	           setWord(wordBuffer[0]);
+	           	
+	           //clear screen
+	           clearScreen();
+           }
         }
         else
         {
@@ -272,21 +284,22 @@ TweetDefendor = function()
 
     function eliminateDuplicates(arr)
     {
-        var len=arr.length,
-        var out=[],
-        var obj={};
-
-      for (i=0;i<len;i++) 
-      {
-        obj[arr[i]]=0;
-      }
-
-      for (i in obj) 
-      {
-        out.push(i);
-      }
-
-      return out;
+		var len = arr.length;
+		var out = [];
+		var obj = {};
+		var i;
+	
+		for (i=0; i<len; i++) 
+		{
+			obj[arr[i]]=0;
+		}
+		
+		for (i in obj) 
+		{
+			out.push(i);
+		}
+		
+		return out;
     }
 
     function getRandomWord()
