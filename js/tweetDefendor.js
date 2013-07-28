@@ -15,6 +15,18 @@ TweetDefendor = function()
     
     var moveWords = setInterval(function() {
     	$(".word").css( "right", "+=2" );
+    	
+    	//remove if too far off the screen, then clear screen and add to sentance
+    	$(".word").each(function()
+        {
+            if($(this).position().left < -200) {
+            	//remove word
+            	$(this).remove();
+            	
+            	//clear screen
+            	clearScreen();
+            }
+        });
     }, wordSpeed);
 
     //List of url for source text
@@ -67,7 +79,7 @@ TweetDefendor = function()
     //clear screen of words
     function clearScreen()
     {
-    	
+    	$(".word").remove();
     }
     
     //add new word to the screen.
