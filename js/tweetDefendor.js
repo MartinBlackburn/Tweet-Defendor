@@ -141,9 +141,19 @@ TweetDefendor = function()
     }
     
     //shoot when clicked
+    var canShoot = true;
+    
+    var canShootTimer = setInterval(function() {
+    	canShoot = true;
+    }, 800);
+    
 	gameBoard.on("click", function(event) {
 		if(event.offsetY < gameboardHeight - player.height()) {
-		    shoot(event.offsetY);
+		    if(canShoot) {
+		    	shoot(event.offsetY);
+		    }
+		    
+		    canShoot = false;
 		}
 	});
 	
