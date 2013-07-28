@@ -1,6 +1,7 @@
 TweetDefendor = function() 
 {
     //variables
+	var gameBoard = $(".gameBoard").first();
     var finalSentence = "";
     var gameboardHeight = 0;
     var player = $(".player");
@@ -42,7 +43,7 @@ TweetDefendor = function()
 	});
 	
 	//make the player follow the mouse (start when mouse is over it)
-	$(".gameBoard").on("mousemove", function(event) {
+	gameBoard.on("mousemove", function(event) {
 		if(event.offsetY < gameboardHeight - player.height()) {
 		    player.css({
 		       top: event.offsetY
@@ -54,7 +55,7 @@ TweetDefendor = function()
     function resizeGameBoard()
     {
     	gameboardHeight = $(window).height() - $(".header").outerHeight() - $(".footer").outerHeight() - 100;
-    	$(".gameBoard").css("height", gameboardHeight + "px");
+    	gameBoard.css("height", gameboardHeight + "px");
     }
     
     
