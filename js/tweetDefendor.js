@@ -143,7 +143,6 @@ TweetDefendor = function()
         genNextWords();
     }
 };
-};
 
 $(function() 
 {
