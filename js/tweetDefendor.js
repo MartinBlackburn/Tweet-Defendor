@@ -38,9 +38,16 @@ TweetDefendor = function()
     var mobyDick = "text/mobyDick.txt";
     var frankenstein = "text/frankenstein.txt";
     var alice = "text/alice.txt";
+    var pridePred = "text/pridePred.txt";
+    var huckFinn = "text/huckFinn.txt";
+    var wuthHeight = "text/wuthHeight.txt";
+    var peterPan = "text/peterPan.txt";
+    var beingEarn = "text/beingEarn.txt";
+    var twoCities = "text/twoCities.txt";
+    var littleBro = "text/littleBro.txt";
 
     //ebooks array
-    var ebookList = [mobyDick, alice, frankenstein];
+    var ebookList = [mobyDick, alice, frankenstein, pridePred, huckFinn, wuthHeight, peterPan, beingEarn, twoCities, littleBro];
     var finalSourceText = "";
 
     //Array of all the words
@@ -154,6 +161,8 @@ TweetDefendor = function()
         {
             //Seperate all of the words and put them into an array
             wordArray = finalSourceText.split(/\s+/g);
+
+            console.log("wordArray length: " + wordArray.length);
 
             stripWords();
         
