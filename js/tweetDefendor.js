@@ -9,10 +9,7 @@ TweetDefendor = function()
     var wordSpeed = 30;
     
     //word timers
-    var timer = setInterval(function() {
-    	displayNewWord()
-    }, wordInterval);
-    
+    var timer;
     var moveWordsTimer;
 	moveWords();
 
@@ -74,6 +71,16 @@ TweetDefendor = function()
 		    shoot(event.offsetY);
 		}
 	});
+	
+	//START!
+    function startGame()
+    {
+    	console.log("Starting");
+    	
+    	timer = setInterval(function() {
+        	displayNewWord()
+        }, wordInterval);
+    }
     
     //move words
     function moveWords()
@@ -205,6 +212,9 @@ TweetDefendor = function()
     function randomStartWords()
     {
         console.log("RandomWords");
+        
+        wordBuffer = [];
+        
         var i = 0;
 
         while(i < 50)
@@ -217,6 +227,8 @@ TweetDefendor = function()
                 i++;
             }
         }
+        
+        startGame();
     }
 
     //get next words base on the word passed in
