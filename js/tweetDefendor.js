@@ -132,7 +132,7 @@ TweetDefendor = function()
 
         for(var i = 0; i < 50; i++)
         {
-            var randomNum = Math.ceil(Math.random()*wordArray.length);
+            var randomNum = Math.floor(Math.random()*wordArray.length);
 
             wordBuffer.push( wordArray[randomNum]);
         }
@@ -144,12 +144,19 @@ TweetDefendor = function()
         console.log("genNextWords");
         wordBuffer = [];
 
-        for(var i = 0; i < wordArray.length; i++)
+        if(finalSentence.length < 110) 
         {
-            if(wordArray[i] == chosenWord)
+            for(var i = 0; i < wordArray.length; i++)
             {
-                wordBuffer.push(wordArray[i+1]);
+                if(wordArray[i] == chosenWord)
+                {
+                    wordBuffer.push(wordArray[i+1]);
+                }
             }
+        }
+        else
+        {
+            sendTweet();
         }
     }
 
@@ -164,6 +171,12 @@ TweetDefendor = function()
         chosenWord = word;
         
         genNextWords();
+    }
+
+    //The final sentence is long enough, time to send the tweet!
+    function sendTweet()
+    {
+
     }
 };
 
