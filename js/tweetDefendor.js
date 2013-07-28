@@ -25,6 +25,8 @@ TweetDefendor = function()
     
     //final sentence
     var finalSentence = "";
+
+    var booksLoaded = 0;
     
     resizeGameBoard();
     
@@ -80,17 +82,24 @@ TweetDefendor = function()
         }
     }
 
+    //Combine all the ebooks, once they are all loaded strip punctuation and generate the starting words.
     function createSourceText(data)
     {
         console.log("createSourceText");
 
+        booksLoaded++;
+
         finalSourceText = finalSourceText + "/n/n" + data;
 
-        wordArray = finalSourceText.split(/\s+/g);
+        if(booksLoaded == ebookList.length)
+        {
+            //Seperate all of the words and put them into an array
+            wordArray = finalSourceText.split(/\s+/g);
 
-        stripWords();
+            stripWords();
         
-        randomStartWords();
+            randomStartWords();
+        }
     }
 
     //Strip punctuation from words in word array
