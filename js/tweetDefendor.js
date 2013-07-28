@@ -138,7 +138,7 @@ TweetDefendor = function()
     {
         for(var i = 0; i < wordArray.length; i++)
         {
-            wordArray[i] = wordArray[i].replace(/\b[_-.,;:()&$#!?\[\]{}"']+\B|\B[_-.,;:()&$#!?\[\]{}"']+\b/g, "").toLocaleLowerCase();
+            wordArray[i] = wordArray[i].replace(/\b[-.,;:()_&$#!?\[\]{}"']+\B|\B[-.,;:()_&$#!?\[\]{}"']+\b/g, "").toLocaleLowerCase();
         }
     }
 
