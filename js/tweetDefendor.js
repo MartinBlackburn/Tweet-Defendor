@@ -51,6 +51,8 @@ TweetDefendor = function()
 
     //chosen word
     var chosenWord = null;
+    //previous word
+    var previousWord = null;
     
     //final sentence
     var finalSentence = "";
@@ -176,11 +178,24 @@ TweetDefendor = function()
 
         if(finalSentence.length < 110) 
         {
-            for(var i = 0; i < wordArray.length; i++)
+            if(previousWord)
             {
-                if(wordArray[i] == chosenWord)
+                for(var i = 1; i < wordArray.length; i++)
                 {
-                    wordBuffer.push(wordArray[i+1]);
+                    if(wordArray[i-1] + wordArray[i] == previousWord + chosenWord)
+                    {
+                        wordBuffer.push(wordArray[i+1]);
+                    }
+                }
+            }
+            else
+            {
+                for(var i = 0; i < wordArray.length; i++)
+                {
+                    if(wordArray[i] == chosenWord)
+                    {
+                        wordBuffer.push(wordArray[i+1]);
+                    }
                 }
             }
         }
@@ -198,6 +213,7 @@ TweetDefendor = function()
     
     function setWord(word)
     {
+        previousWord = chosenWord;
         chosenWord = word;
         
         genNextWords();
