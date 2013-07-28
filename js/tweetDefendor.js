@@ -6,11 +6,16 @@ TweetDefendor = function()
     var gameboardHeight = 0;
     var player = $(".player");
     var wordInterval = 1000;
+    var wordSpeed = 30;
     
-    //word timer
+    //word timers
     var timer = setInterval(function() {
     	displayNewWord()
     }, wordInterval);
+    
+    var moveWords = setInterval(function() {
+    	$(".word").css( "right", "+=2" );
+    }, wordSpeed);
 
     //List of url for source text
     var mobyDick = "text/mobyDick.txt";
@@ -68,7 +73,7 @@ TweetDefendor = function()
     //add new word to the screen.
     function displayNewWord()
     {
-    	var newWord = "<div class='word font" + Math.ceil(Math.random()*10) + "' style='top: " + Math.ceil(Math.random()*99) + "%'>" + getRandomWord() + "</div>";
+    	var newWord = "<div class='word font" + Math.ceil(Math.random()*10) + "' style='top: " + Math.ceil(Math.random()*90) + "%'>" + getRandomWord() + "</div>";
     	gameBoard.append(newWord);
     }
 

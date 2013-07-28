@@ -140,6 +140,10 @@ body {
 .word {
 	display: inline-block;
 	
+	white-space: nowrap;
+	
+	pointer-events: none;
+	
 	position: absolute;
 	top: 0;
 	right: -100px;
