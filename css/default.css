@@ -158,12 +158,6 @@ body {
 	top: 0;
 	right: -100px;
 	
-	-webkit-animation: wordsMove 16s linear 0s 1 normal;
-	-moz-animation: wordsMove 16s linear 0s 1 normal;
-	-ms-animation: wordsMove 16s linear 0s 1 normal;
-	-o-animation: wordsMove 16s linear 0s 1 normal;
-	animation: wordsMove 16s linear 0s 1 normal;
-	
 	-webkit-user-select: none;  
 	-moz-user-select: none; 
 	-ms-user-select: none; 
@@ -171,25 +165,130 @@ body {
 	user-select: none;
 }
 
+.word.animation1 {
+	-webkit-animation: wordsMove 16s linear 0s 1 normal;
+	-moz-animation: wordsMove 16s linear 0s 1 normal;
+	-ms-animation: wordsMove 16s linear 0s 1 normal;
+	-o-animation: wordsMove 16s linear 0s 1 normal;
+	animation: wordsMove 16s linear 0s 1 normal;
+}
+
+.word.animation2 {
+	-webkit-animation: wordsMove 12s linear 0s 1 normal;
+	-moz-animation: wordsMove 12s linear 0s 1 normal;
+	-ms-animation: wordsMove 12s linear 0s 1 normal;
+	-o-animation: wordsMove 12s linear 0s 1 normal;
+	animation: wordsMove 12s linear 0s 1 normal;
+}
+
+.word.animation3 {
+	-webkit-animation: wordsMove2 16s linear 0s 1 normal;
+	-moz-animation: wordsMove2 16s linear 0s 1 normal;
+	-ms-animation: wordsMove2 16s linear 0s 1 normal;
+	-o-animation: wordsMove2 16s linear 0s 1 normal;
+	animation: wordsMove2 16s linear 0s 1 normal;
+}
+
+.word.animation3 {
+	-webkit-animation: wordsMove2 12s linear 0s 1 normal;
+	-moz-animation: wordsMove2 12s linear 0s 1 normal;
+	-ms-animation: wordsMove2 12s linear 0s 1 normal;
+	-o-animation: wordsMove2 12s linear 0s 1 normal;
+	animation: wordsMove2 12s linear 0s 1 normal;
+}
+
+
 @-webkit-keyframes wordsMove {
-  0%   { right: -100px; }
-  100% { right: 2000px; }
+  0%   { right: -100px; margin-top: 0;}
+  10%   { margin-top: 50px;}
+  30%   { margin-top: -50px;}
+  50%   { margin-top: 50px;}
+  70%   { margin-top: -50px;}
+  90%   { margin-top: 50px;}
+  100% { right: 2000px; margin-top: 0;}
 }
 @-moz-keyframes wordsMove {
-  0%   { right: -100px; }
-  100% { right: 2000px; }
+  0%   { right: -100px; margin-top: 0;}
+  10%   { margin-top: 50px;}
+  30%   { margin-top: -50px;}
+  50%   { margin-top: 50px;}
+  70%   { margin-top: -50px;}
+  90%   { margin-top: 50px;}
+  100% { right: 2000px; margin-top: 0;}
 }
 @-ms-keyframes wordsMove {
-  0%   { right: -100px; }
-  100% { right: 2000px; }
-}
+  0%   { right: -100px; margin-top: 0;}
+  10%   { margin-top: 50px;}
+  30%   { margin-top: -50px;}
+  50%   { margin-top: 50px;}
+  70%   { margin-top: -50px;}
+  90%   { margin-top: 50px;}
+  100% { right: 2000px; margin-top: 0;}
+ }
 @-o-keyframes wordsMove {
-  0%   { right: -100px; }
-  100% { right: 2000px; }
+  0%   { right: -100px; margin-top: 0;}
+  10%   { margin-top: 50px;}
+  30%   { margin-top: -50px;}
+  50%   { margin-top: 50px;}
+  70%   { margin-top: -50px;}
+  90%   { margin-top: 50px;}
+  100% { right: 2000px; margin-top: 0;}
 }
 @keyframes wordsMove {
-  0%   { right: -100px; }
-  100% { right: 2000px; }
+  0%   { right: -100px; margin-top: 0;}
+  10%   { margin-top: 50px;}
+  30%   { margin-top: -50px;}
+  50%   { margin-top: 50px;}
+  70%   { margin-top: -50px;}
+  90%   { margin-top: 50px;}
+  100% { right: 2000px; margin-top: 0;}
+}
+
+
+@-webkit-keyframes wordsMove2 {
+  0%   { right: -100px; margin-top: 0;}
+  10%   { margin-top: -50px;}
+  30%   { margin-top: 50px;}
+  50%   { margin-top: -50px;}
+  70%   { margin-top: 50px;}
+  90%   { margin-top: -50px;}
+  100% { right: 2000px; margin-top: 0;}
+}
+@-moz-keyframes wordsMove2 {
+  0%   { right: -100px; margin-top: 0;}
+  10%   { margin-top: -50px;}
+  30%   { margin-top: 50px;}
+  50%   { margin-top: -50px;}
+  70%   { margin-top: 50px;}
+  90%   { margin-top: -50px;}
+  100% { right: 2000px; margin-top: 0;}
+}
+@-ms-keyframes wordsMove2 {
+  0%   { right: -100px; margin-top: 0;}
+  10%   { margin-top: -50px;}
+  30%   { margin-top: 50px;}
+  50%   { margin-top: -50px;}
+  70%   { margin-top: 50px;}
+  90%   { margin-top: -50px;}
+  100% { right: 2000px; margin-top: 0;}
+ }
+@-o-keyframes wordsMove2 {
+  0%   { right: -100px; margin-top: 0;}
+  10%   { margin-top: -50px;}
+  30%   { margin-top: 50px;}
+  50%   { margin-top: -50px;}
+  70%   { margin-top: 50px;}
+  90%   { margin-top: -50px;}
+  100% { right: 2000px; margin-top: 0;}
+}
+@keyframes wordsMove2 {
+  0%   { right: -100px; margin-top: 0;}
+  10%   { margin-top: -50px;}
+  30%   { margin-top: 50px;}
+  50%   { margin-top: -50px;}
+  70%   { margin-top: 50px;}
+  90%   { margin-top: -50px;}
+  100% { right: 2000px; margin-top: 0;}
 }
 
 
