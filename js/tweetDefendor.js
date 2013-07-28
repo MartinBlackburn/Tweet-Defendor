@@ -81,8 +81,6 @@ TweetDefendor = function()
         clearInterval(moveWordsTimer);
         
         moveWordsTimer = setInterval(function() {
-        	$(".word").css( "right", "+=2" );
-        	
         	//remove if too far off the screen, then clear screen and add to sentance
         	$(".word").each(function()
             {
@@ -104,11 +102,6 @@ TweetDefendor = function()
                 }
             });
         }, wordSpeed);
-        
-        //speed up for next level
-        if(wordSpeed > 15) {
-        	wordSpeed -= 5;
-        }
     }
     
     

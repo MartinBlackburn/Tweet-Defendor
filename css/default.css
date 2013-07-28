@@ -151,9 +151,34 @@ body {
 	position: absolute;
 	top: 0;
 	right: -100px;
+	
+	-webkit-animation: wordsMove 16s linear 0s 1 normal;
+	-moz-animation: wordsMove 16s linear 0s 1 normal;
+	-ms-animation: wordsMove 16s linear 0s 1 normal;
+	-o-animation: wordsMove 16s linear 0s 1 normal;
+	animation: wordsMove 16s linear 0s 1 normal;
 }
 
-
+@-webkit-keyframes wordsMove {
+  0%   { right: -100px; }
+  100% { right: 2000px; }
+}
+@-moz-keyframes wordsMove {
+  0%   { right: -100px; }
+  100% { right: 2000px; }
+}
+@-ms-keyframes wordsMove {
+  0%   { right: -100px; }
+  100% { right: 2000px; }
+}
+@-o-keyframes wordsMove {
+  0%   { right: -100px; }
+  100% { right: 2000px; }
+}
+@keyframes wordsMove {
+  0%   { right: -100px; }
+  100% { right: 2000px; }
+}
 
 
 
