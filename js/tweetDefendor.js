@@ -74,6 +74,13 @@ TweetDefendor = function()
 		    });
 		}
 	});
+	
+	//shoot when clicked
+	gameBoard.on("click", function(event) {
+		if(event.offsetY < gameboardHeight - player.height()) {
+		    shoot(event.offsetY);
+		}
+	});
     
     //resize gameboard
     function resizeGameBoard()
@@ -101,6 +108,12 @@ TweetDefendor = function()
     {
     	finalSentence += " " + word;
     	$(".footer").text(finalSentence);
+    }
+    
+    //shoot
+    function shoot(yPos)
+    {
+    	console.log("shooting");
     }
     
 
