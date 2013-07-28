@@ -149,7 +149,7 @@ TweetDefendor = function()
     
 	gameBoard.on("click", function(event) {
 		if(event.offsetY < gameboardHeight - player.height()) {
-		    if(canShoot) {
+		    if(canShoot && $(".bullet").length < 15) {
 		    	shoot(event.offsetY);
 		    }
 		    
@@ -172,8 +172,8 @@ TweetDefendor = function()
     function shoot(yPos)
     {
     	console.log("shooting");
-    	
-    	var newBullet = "<div class='bullet' style='top: " + yPos + "'</div>";
+
+    	var newBullet = "<div class='bullet' style='top: " + (yPos + Math.random() * 5) + "'</div>";
     	gameBoard.append(newBullet);
     }
     
