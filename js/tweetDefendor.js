@@ -13,26 +13,8 @@ TweetDefendor = function()
     	displayNewWord()
     }, wordInterval);
     
-    var moveWords = setInterval(function() {
-    	$(".word").css( "right", "+=2" );
-    	
-    	//remove if too far off the screen, then clear screen and add to sentance
-    	$(".word").each(function()
-        {
-            if($(this).position().left < -200) {
-            	//remove word
-            	$(this).remove();
-            	
-            	addToSentance($(this).text());
-            	
-            	//set chosen word
-            	setWord($(this).text());
-            	
-            	//clear screen
-            	clearScreen();
-            }
-        });
-    }, wordSpeed);
+    var moveWordsTimer;
+	moveWords();
 
     //List of url for source text
     var mobyDick = "text/mobyDick.txt";
@@ -88,6 +70,44 @@ TweetDefendor = function()
 		    shoot(event.offsetY);
 		}
 	});
+    
+    //move words
+    function moveWords()
+    {
+        clearInterval(moveWordsTimer);
+        
+        moveWordsTimer = setInterval(function() {
+        	$(".word").css( "right", "+=2" );
+        	
+        	//remove if too far off the screen, then clear screen and add to sentance
+        	$(".word").each(function()
+            {
+                if($(this).position().left < -150) {
+                	//remove word
+                	$(this).remove();
+                	
+                	addToSentance($(this).text());
+                	
+                	//set chosen word
+                	setWord($(this).text());
+                	
+                	//clear screen
+                	clearScreen();
+                	
+                	//increase level speed
+                	moveWords();
+                }
+            });
+        }, wordSpeed);
+        
+        //speed up for next level
+        if(wordSpeed > 15) {
+        	wordSpeed -= 5;
+        }
+        
+        console.log(wordSpeed);
+    }
+    
     
     //resize gameboard
     function resizeGameBoard()
