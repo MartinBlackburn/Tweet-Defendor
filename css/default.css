@@ -106,6 +106,8 @@ body {
 \*----------------------------------------------------------------------------------------------------------------*/
 .gameBoard {
 	position: relative;
+	
+	overflow: hidden;
 }
 
 .gameBoard .player {
@@ -140,5 +142,5 @@ body {
 	
 	position: absolute;
 	top: 0;
-	right: 0;
+	right: -100px;
 }

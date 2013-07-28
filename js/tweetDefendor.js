@@ -68,7 +68,8 @@ TweetDefendor = function()
     //add new word to the screen.
     function displayNewWord()
     {
-	    
+    	var newWord = "<div class='word font" + Math.ceil(Math.random()*10) + "' style='top: " + Math.ceil(Math.random()*99) + "%'>" + getRandomWord() + "</div>";
+    	gameBoard.append(newWord);
     }
 
     /*==============================================================
