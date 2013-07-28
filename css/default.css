@@ -163,6 +163,12 @@ body {
 	-ms-animation: wordsMove 16s linear 0s 1 normal;
 	-o-animation: wordsMove 16s linear 0s 1 normal;
 	animation: wordsMove 16s linear 0s 1 normal;
+	
+	-webkit-user-select: none;  
+	-moz-user-select: none; 
+	-ms-user-select: none; 
+	-o-user-select: none;
+	user-select: none;
 }
 
 @-webkit-keyframes wordsMove {
