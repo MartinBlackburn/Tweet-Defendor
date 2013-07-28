@@ -207,12 +207,17 @@ TweetDefendor = function()
     function randomStartWords()
     {
         console.log("RandomWords");
+        var i = 0;
 
-        for(var i = 0; i < 50; i++)
+        while(i < 50)
         {
             var randomNum = Math.floor(Math.random()*wordArray.length);
 
-            wordBuffer.push( wordArray[randomNum]);
+            if(wordArray[randomNum].length > 3) {
+                wordBuffer.push( wordArray[randomNum]);
+
+                i++;
+            }
         }
     }
 
