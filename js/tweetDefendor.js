@@ -4,6 +4,12 @@ TweetDefendor = function()
     var finalSentence = "";
     var gameboardHeight = 0;
     var player = $(".player");
+    var wordInterval = 1000;
+    
+    //word timer
+    var timer = setInterval(function() {
+    	displayNewWord()
+    }, wordInterval);
 
     //List of url for source text
     var mobyDick = "text/mobyDick.txt";
@@ -56,6 +62,12 @@ TweetDefendor = function()
     function clearScreen()
     {
     	
+    }
+    
+    //add new word to the screen.
+    function displayNewWord()
+    {
+	    
     }
 
     /*==============================================================
