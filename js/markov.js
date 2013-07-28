@@ -2,9 +2,11 @@ Markov = function()
 {
     //List of url for source text
     var mobyDick = "text/mobyDick.txt";
+    var frankenstein = "text/frankenstein.txt";
+    var alice = "text/alice.txt";
 
 	//ebooks array
-	var ebookList = [mobyDick];
+	var ebookList = [mobyDick, alice, frankenstein];
     var finalSourceText = "";
 
     //Array of all the words
