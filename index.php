@@ -15,8 +15,12 @@
 			<h1 class="title">Tweet Defendor</h1>
 			
 			<div class="about">
-				Using markov chains to try and build sentences from books. This sentence is then tweeted to your many followers. <br />
-				By sentence, it usually turns out to be garbage that makes no sense.
+				Protect your twitter stream from spam, shoot down the words before they infiltrate your twitter.<br/>
+                Once enough words have gotten past your defences it will send a tweet to your followers.<br/>
+                <br/>
+                This is just a little game made by Jonny (@JonnyTweets) and Martin (@walking_fishy). <br/>
+                It uses markov chains to piece together something that resembles a sentence.<br />
+                But usually it ends up just being jumbled garbage resembling spam.
 			</div>
 			
 			<a class="button play" href="/game.php">Play</a>
