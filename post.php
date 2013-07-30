@@ -15,7 +15,7 @@
 			<h1 class="title">Tweet Defendor</h1>
 			
 			<div class="about">
-				Sentance here
+				<?php echo $_POST['sentance']; ?>
 			</div>
 			
 			<a class="button play" href="/game.php">Play again</a>

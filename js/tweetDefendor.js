@@ -7,6 +7,7 @@ TweetDefendor = function()
     var player = $(".player");
     var wordInterval = 1000;
     var wordSpeed = 30;
+    var hasEnded = false;
     
     //word timers
     var timer;
@@ -64,8 +65,6 @@ TweetDefendor = function()
     //move words
     function moveWords()
     {
-        clearInterval(moveWordsTimer);
-        
         moveWordsTimer = setInterval(function() {
         	//remove if too far off the screen, then clear screen and add to sentance
         	$(".word").each(function()
@@ -261,7 +260,7 @@ TweetDefendor = function()
         console.log("genNextWords");
         wordBuffer = [];
 
-        if(finalSentence.length < 110) 
+        if(finalSentence.length < 107) 
         {
             if(previousWord)
             {
@@ -341,11 +340,15 @@ TweetDefendor = function()
     function sendTweet()
     {
         console.log("sending tweet");
-      
+        
+        clearInterval(timer);
+        clearInterval(moveWordsTimer);
+        finalSentence = finalSentence + "... via @TweetDefendor";
+        
         $.ajax({
             type: "POST",
             url: "/post.php",
-            data: finalSentence + " via @TweetDefendor",
+            data: { sentance: finalSentence},
             success: displayWin,
             error: function(xhr, error, text2){ console.log(xhr); console.log(error); console.log(text2); }
         });
