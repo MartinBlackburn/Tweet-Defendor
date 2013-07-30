@@ -46,7 +46,7 @@
 
 
 /*----------------------------------------------------------------------------------------------------------------*\
-    Page Container
+    Page Containers
 \*----------------------------------------------------------------------------------------------------------------*/
 body {
 	padding: 30px;
@@ -62,6 +62,36 @@ body {
 	overflow: hidden;
 }
 
+
+
+
+
+/*----------------------------------------------------------------------------------------------------------------*\
+    HOME PAGE
+\*----------------------------------------------------------------------------------------------------------------*/
+.homePage {
+	max-width: 600px;
+	min-width: 0;
+	padding: 1em;
+	
+	text-align: center;
+}
+
+.title {
+	margin-bottom: 30px;
+}
+
+.about {
+	margin-bottom: 30px;
+}
+
+.button {
+	width: 100%;
+	padding: 10px;
+	border-radius: 4px;
+	
+	text-transform: uppercase;
+}
 
 
 
@@ -197,7 +227,6 @@ body {
 	animation: wordsMove2 12s linear 0s 1 normal;
 }
 
-
 @-webkit-keyframes wordsMove {
   0%   { right: -100px; margin-top: 0;}
   10%   { margin-top: 50px;}
@@ -207,6 +236,7 @@ body {
   90%   { margin-top: 50px;}
   100% { right: 2000px; margin-top: 0;}
 }
+
 @-moz-keyframes wordsMove {
   0%   { right: -100px; margin-top: 0;}
   10%   { margin-top: 50px;}
@@ -216,6 +246,7 @@ body {
   90%   { margin-top: 50px;}
   100% { right: 2000px; margin-top: 0;}
 }
+
 @-ms-keyframes wordsMove {
   0%   { right: -100px; margin-top: 0;}
   10%   { margin-top: 50px;}
@@ -224,7 +255,8 @@ body {
   70%   { margin-top: -50px;}
   90%   { margin-top: 50px;}
   100% { right: 2000px; margin-top: 0;}
- }
+}
+ 
 @-o-keyframes wordsMove {
   0%   { right: -100px; margin-top: 0;}
   10%   { margin-top: 50px;}
@@ -234,6 +266,7 @@ body {
   90%   { margin-top: 50px;}
   100% { right: 2000px; margin-top: 0;}
 }
+
 @keyframes wordsMove {
   0%   { right: -100px; margin-top: 0;}
   10%   { margin-top: 50px;}
@@ -244,7 +277,6 @@ body {
   100% { right: 2000px; margin-top: 0;}
 }
 
-
 @-webkit-keyframes wordsMove2 {
   0%   { right: -100px; margin-top: 0;}
   10%   { margin-top: -50px;}
@@ -254,6 +286,7 @@ body {
   90%   { margin-top: -50px;}
   100% { right: 2000px; margin-top: 0;}
 }
+
 @-moz-keyframes wordsMove2 {
   0%   { right: -100px; margin-top: 0;}
   10%   { margin-top: -50px;}
@@ -263,6 +296,7 @@ body {
   90%   { margin-top: -50px;}
   100% { right: 2000px; margin-top: 0;}
 }
+
 @-ms-keyframes wordsMove2 {
   0%   { right: -100px; margin-top: 0;}
   10%   { margin-top: -50px;}
@@ -271,7 +305,8 @@ body {
   70%   { margin-top: 50px;}
   90%   { margin-top: -50px;}
   100% { right: 2000px; margin-top: 0;}
- }
+}
+
 @-o-keyframes wordsMove2 {
   0%   { right: -100px; margin-top: 0;}
   10%   { margin-top: -50px;}
@@ -281,6 +316,7 @@ body {
   90%   { margin-top: -50px;}
   100% { right: 2000px; margin-top: 0;}
 }
+
 @keyframes wordsMove2 {
   0%   { right: -100px; margin-top: 0;}
   10%   { margin-top: -50px;}
@@ -290,6 +326,8 @@ body {
   90%   { margin-top: -50px;}
   100% { right: 2000px; margin-top: 0;}
 }
+
+
 
 
 
@@ -325,18 +363,22 @@ body {
   0%   { left: 20px; }
   100% { left: 2000px; }
 }
+
 @-moz-keyframes bulletsMove {
   0%   { left: 20px; }
   100% { left: 2000px; }
 }
+
 @-ms-keyframes bulletsMove {
   0%   { left: 20px; }
   100% { left: 2000px; }
 }
+
 @-o-keyframes bulletsMove {
   0%   { left: 20px; }
   100% { left: 2000px; }
 }
+
 @keyframes bulletsMove {
   0%   { left: 20px; }
   100% { left: 2000px; }
