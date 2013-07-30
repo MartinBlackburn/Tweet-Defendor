@@ -19,6 +19,7 @@
                 Once enough words have gotten past your defences it will send a tweet to your followers.<br/>
                 <br/>
                 This is just a little game made by Jonny (@JonnyTweets) and Martin (@walking_fishy). <br/>
+                <br />
                 It uses markov chains to piece together something that resembles a sentence.<br />
                 But usually it ends up just being jumbled garbage resembling spam.
 			</div>
