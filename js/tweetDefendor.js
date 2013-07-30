@@ -124,7 +124,7 @@ TweetDefendor = function()
     
     var canShootTimer = setInterval(function() {
     	canShoot = true;
-    }, 800);
+    }, 600);
     
 	gameBoard.on("click", function(event) {
 		if(event.offsetY < gameboardHeight - player.height()) {
@@ -340,7 +340,21 @@ TweetDefendor = function()
     //The final sentence is long enough, time to send the tweet!
     function sendTweet()
     {
-
+        console.log("sending tweet");
+      
+        $.ajax({
+            type: "POST",
+            url: "/post.php",
+            data: finalSentence + " via @TweetDefendor",
+            success: displayWin,
+            error: function(xhr, error, text2){ console.log(xhr); console.log(error); console.log(text2); }
+        });
+    }
+    
+    function displayWin(data)
+    {
+        console.log("disaply win page");
+        $('body').html(data);
     }
 };
 
