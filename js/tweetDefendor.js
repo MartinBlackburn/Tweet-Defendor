@@ -123,7 +123,7 @@ TweetDefendor = function()
     
     var canShootTimer = setInterval(function() {
     	canShoot = true;
-    }, 600);
+    }, 400);
     
 	gameBoard.on("click", function(event) {
 		if(event.offsetY < gameboardHeight - player.height()) {
@@ -341,10 +341,14 @@ TweetDefendor = function()
     {
         console.log("sending tweet");
         
+        //stop timers
         clearInterval(timer);
         clearInterval(moveWordsTimer);
+        
+        //get final sentence
         finalSentence = finalSentence + "... via @TweetDefendor";
         
+        //post tweet and return final screen
         $.ajax({
             type: "POST",
             url: "/post.php",
