@@ -13,24 +13,10 @@ TweetDefendor = function()
     var moveWordsTimer;
 	moveWords();
 
-    //List of url for source text
-    var mobyDick = "text/mobyDick.txt";
-    var frankenstein = "text/frankenstein.txt";
-    var alice = "text/alice.txt";
-    var pridePred = "text/pridePred.txt";
-    var huckFinn = "text/huckFinn.txt";
-    var wuthHeight = "text/wuthHeights.txt";
-    var peterPan = "text/peterPan.txt";
-    var beingEarn = "text/beingEarn.txt";
-    var twoCities = "text/twoCities.txt";
-    var littleBro = "text/littleBro.txt";
-    var ftw = "text/ftw.txt";
-    var printCrime = "text/printCrime.txt";
-    var sysAdmin = "text/sysAdmin.txt";
-    var iRobot = "text/iRobot.txt";
-
     //ebooks array
-    var ebookList = [mobyDick, littleBro, alice, ftw, frankenstein, printCrime, pridePred, sysAdmin, huckFinn, iRobot, wuthHeight, peterPan, beingEarn, twoCities];
+    var ebookList = ["text/mobyDick.txt", "text/littleBro.txt", "text/alice.txt", "text/ftw.txt", "text/frankenstein.txt", 
+                     "text/printCrime.txt", "text/pridePred.txt", "text/sysAdmin.txt", "text/huckFinn.txt", "text/iRobot.txt", 
+                     "text/wuthHeights.txt", "text/peterPan.txt", "text/beingEarn.txt", "text/twoCities.txt"];
     var finalSourceText = "";
 
     //Array of all the words
