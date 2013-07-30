@@ -15,8 +15,8 @@
 			<h1 class="title">Tweet Defendor</h1>
 			
 			<div class="about">
-				Using markov chains to try and build sentacnes from books. This sentance is then tweeted to you many followers.
-				By sentance, it usually turns out to be garbage that makes no sense.
+				Using markov chains to try and build sentences from books. This sentence is then tweeted to your many followers. <br />
+				By sentence, it usually turns out to be garbage that makes no sense.
 			</div>
 			
 			<a class="button play" href="/game.php">Play</a>
