@@ -123,8 +123,11 @@ TweetDefendor = function()
     	canShoot = true;
     }, 400);
     
-    $(".gameBoard").on("click", function(event) {
-		if(event.offsetY < gameboardHeight - player.height()) {
+    $(".gameBoard").click(function(event) {
+        var parentOffset = $(this).parent().offset(); 
+        var eventY = event.pageX - parentOffset.top;
+        
+		if(eventY < gameboardHeight - player.height()) {
 		    if(canShoot && $(".bullet").length < 15) {
 		    	shoot(event.offsetY);
 		    }
