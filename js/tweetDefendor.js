@@ -1,7 +1,6 @@
 TweetDefendor = function() 
 {
     //variables
-	var gameBoard = $(".gameBoard").first();
     var finalSentence = "";
     var gameboardHeight = 0;
     var player = $(".player");
@@ -44,7 +43,7 @@ TweetDefendor = function()
 	});
 	
 	//make the player follow the mouse (start when mouse is over it)
-	gameBoard.on("mousemove", function(event) {
+	$(".gameBoard").on("mousemove", function(event) {
 		if(event.offsetY < gameboardHeight - player.height()) {
 		    player.css({
 		       top: event.offsetY
@@ -93,10 +92,9 @@ TweetDefendor = function()
     //resize gameboard
     function resizeGameBoard()
     {
-    	gameboardHeight = $(window).height() - $(".header").outerHeight() - $(".footer").outerHeight() - 100;
-    	gameBoard.css("height", gameboardHeight + "px");
-    }
-    
+    	gameboardHeight = $(document).height() - $(".header").outerHeight() - $(".footer").outerHeight() - 100;
+    	$(".gameBoard").css("height", gameboardHeight + "px");
+    }    
     
     //clear screen of words
     function clearScreen()
@@ -108,7 +106,7 @@ TweetDefendor = function()
     function displayNewWord()
     {
     	var newWord = "<div class='word font" + Math.ceil(Math.random()*10) + " animation" + Math.ceil(Math.random()*4) + "' style='top: " + Math.ceil(Math.random()*90) + "%'>" + getRandomWord() + "</div>";
-    	gameBoard.append(newWord);
+    	$(".gameBoard").append(newWord);
     }
     
     //add new word to sentance
@@ -125,7 +123,7 @@ TweetDefendor = function()
     	canShoot = true;
     }, 400);
     
-	gameBoard.on("click", function(event) {
+    $(".gameBoard").on("click", function(event) {
 		if(event.offsetY < gameboardHeight - player.height()) {
 		    if(canShoot && $(".bullet").length < 15) {
 		    	shoot(event.offsetY);
@@ -149,7 +147,7 @@ TweetDefendor = function()
         	});
      
 
-    		if($(this).position().left > gameBoard.outerWidth()) {
+    		if($(this).position().left > $(".gameBoard").first().outerWidth()) {
             	//remove bullet
             	$(this).remove();
             }
@@ -161,7 +159,7 @@ TweetDefendor = function()
     	console.log("shooting");
 
     	var newBullet = "<div class='bullet' style='top: " + (yPos + Math.random() * 5) + "'</div>";
-    	gameBoard.append(newBullet);
+    	$(".gameBoard").append(newBullet);
     }
 
     function isColliding(a, b) {
