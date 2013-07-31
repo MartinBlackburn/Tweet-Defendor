@@ -48,7 +48,7 @@
 	$cb->setToken($_SESSION['oauth_token'], $_SESSION['oauth_token_secret']);
 	
 	//post tweet
-	$reply = $cb->statuses_update("status=" . $_POST['sentance']);
+	$reply = $cb->statuses_update("status=" . stripslashes($_POST['sentance']));
 ?>
 
 <!doctype>
@@ -68,7 +68,7 @@
 			<h1 class="title">Tweet Defendor</h1>
 			
 			<div class="about">
-				<?php echo $_POST['sentance']; ?>
+				<?php echo stripslashes($_POST['sentance']); ?>
 			</div>
 			
 			<a class="button play" href="/game.php">Play again</a>
