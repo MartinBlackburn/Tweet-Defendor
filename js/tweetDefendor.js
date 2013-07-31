@@ -15,7 +15,7 @@ TweetDefendor = function()
 	moveWords();
 
     //ebooks array
-    var ebookList = ["/text/mobyDick.txt", "/text/littleBro.txt", "/text/alice.txt", "/text/ftw.txt", "/text/frankenstein.txt", 
+    var ebookList = ["/text/MobyDick.txt", "/text/littleBro.txt", "/text/alice.txt", "/text/ftw.txt", "/text/frankenstein.txt", 
                      "/text/printCrime.txt", "/text/pridePred.txt", "/text/sysAdmin.txt", "/text/huckFinn.txt", "/text/iRobot.txt", 
                      "/text/wuthHeights.txt", "/text/peterPan.txt", "/text/beingEarn.txt", "/text/twoCities.txt"];
     var finalSourceText = "";
