@@ -43,15 +43,21 @@ TweetDefendor = function()
 	});
 	
 	//make the player follow the mouse (start when mouse is over it)
-	$(".gameBoard").first().on("mousemove", function(event) {
-	    var parentOffset = $(this).parent().offset(); 
-        var eventY = event.pageY - parentOffset.top;
-        
-		if(eventY < gameboardHeight - player.height()) {
-		    player.css({
-		       top: eventY
-		    });
+	$(document).on("mousemove", function(event) {
+	    var parentOffset = $(".gameBoard").offset(); 
+        var position = event.pageY - parentOffset.top;
+	    
+		if(event.pageY < parentOffset.top) {
+		    position = 0;
 		}
+		
+	    if(position > gameboardHeight - player.height()) {
+	        position = gameboardHeight - player.height();
+        }
+		
+		player.css({
+            top: position
+         });
 	});
 	
 	//START!
@@ -126,17 +132,12 @@ TweetDefendor = function()
     	canShoot = true;
     }, 400);
     
-    $(".gameBoard").click(function(event) {
-        var parentOffset = $(this).parent().offset(); 
-        var eventY = event.pageY - parentOffset.top;
-        
-		if(eventY < gameboardHeight - player.height()) {
-		    if(canShoot && $(".bullet").length < 15) {
-		    	shoot(eventY);
-		    }
-		    
-		    canShoot = false;
-		}
+    $(".gameBoard").click(function(event) {        
+	    if(canShoot && $(".bullet").length < 15) {
+	    	shoot(player.position().top);
+	    }
+	    
+	    canShoot = false;
 	});
 	
     var moveButtlets = setInterval(function() {
